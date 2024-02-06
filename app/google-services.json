@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "897226294282",
+    "project_id": "workin-5a37d",
+    "storage_bucket": "workin-5a37d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897226294282:android:a0e6c3fb949da0ebb08bf3",
+        "android_client_info": {
+          "package_name": "com.example.workin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4xmkjg6b-qMAZFMWG9HM1QcaDLjgV5Qs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

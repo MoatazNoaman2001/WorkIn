@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">WorkIn</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="register">Register</string>
+    <string name="please_fill_free_to_create_your_first_account_on_workin">please fill free to create your first account on WorkIn</string>
+    <string name="name">Name</string>
+</resources>

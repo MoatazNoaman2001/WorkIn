@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".presentation.signIn.SignInFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
+        android:layout_marginHorizontal="14dp"
+        android:textSize="28sp"
+        app:fontFamily="@font/alata" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/please_fill_free_to_create_your_first_account_on_workin"
+        android:layout_marginHorizontal="14dp"
+        android:textSize="14sp"
+        android:layout_marginBottom="25dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/EmailTextInput"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_marginHorizontal="14dp"
+        android:layout_marginVertical="4dp"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxStrokeWidth="2dp"
+        app:hintAnimationEnabled="true"
+        app:hintEnabled="true"
+        android:hint="Email"
+        app:hintTextColor="@color/md_theme_light_primary"
+        android:textColorHint="@color/md_theme_light_primary"
+        app:boxStrokeWidthFocused="2dp"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeErrorColor="@color/red700"
+        app:counterEnabled="true"
+        app:counterMaxLength="50"
+        app:counterOverflowTextColor="@color/red700"
+        app:startIconTint="@color/md_theme_light_primary"
+        app:startIconDrawable="@drawable/round_people_alt_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/PassWordTextInput"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_marginHorizontal="14dp"
+        android:layout_marginVertical="4dp"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxStrokeWidth="2dp"
+        app:hintAnimationEnabled="true"
+        app:hintEnabled="true"
+        android:hint="Password"
+        app:hintTextColor="@color/md_theme_light_primary"
+        android:textColorHint="@color/md_theme_light_primary"
+        app:boxStrokeWidthFocused="2dp"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeErrorColor="@color/red700"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/md_theme_light_primary"
+        app:startIconDrawable="@drawable/outline_lock_24"
+        app:startIconTint="@color/md_theme_light_primary"
+        app:counterEnabled="true"
+        app:counterMaxLength="50"
+        app:counterOverflowTextColor="@color/red700">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
