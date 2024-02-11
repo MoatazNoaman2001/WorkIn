@@ -14,7 +14,7 @@
         android:layout_marginHorizontal="14dp"
 
         android:text="@string/register"
-        android:textColor="@color/md_theme_light_primary"
+        android:textColor="@color/md_theme_dark_primary"
         android:textSize="32sp"
         app:fontFamily="@font/alata"
         app:layout_constraintBottom_toTopOf="@+id/appCompatTextView"
@@ -42,7 +42,7 @@
         android:layout_marginHorizontal="14dp"
         android:layout_marginVertical="4dp"
         android:hint="@string/name"
-        android:textColorHint="@color/md_theme_light_primary"
+        android:textColorHint="@color/md_theme_dark_primary"
         app:boxBackgroundMode="outline"
         app:boxCornerRadiusBottomEnd="8dp"
         app:boxCornerRadiusBottomStart="8dp"
@@ -56,13 +56,13 @@
         app:counterOverflowTextColor="@color/red700"
         app:hintAnimationEnabled="true"
         app:hintEnabled="true"
-        app:hintTextColor="@color/md_theme_light_primary"
+        app:hintTextColor="@color/md_theme_dark_primary"
         app:startIconDrawable="@drawable/round_people_alt_24"
-        app:startIconTint="@color/md_theme_light_primary">
+        app:startIconTint="@color/md_theme_dark_primary">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:textColor="@color/md_theme_light_primary"
+            android:textColor="@color/md_theme_dark_primary"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -74,7 +74,7 @@
         android:layout_marginHorizontal="14dp"
         android:layout_marginVertical="4dp"
         android:hint="@string/email"
-        android:textColorHint="@color/md_theme_light_primary"
+        android:textColorHint="@color/md_theme_dark_primary"
         app:boxBackgroundMode="outline"
         app:boxCornerRadiusBottomEnd="8dp"
         app:boxCornerRadiusBottomStart="8dp"
@@ -88,13 +88,13 @@
         app:counterOverflowTextColor="@color/red700"
         app:hintAnimationEnabled="true"
         app:hintEnabled="true"
-        app:hintTextColor="@color/md_theme_light_primary"
+        app:hintTextColor="@color/md_theme_dark_primary"
         app:startIconDrawable="@drawable/baseline_alternate_email_24"
-        app:startIconTint="@color/md_theme_light_primary">
+        app:startIconTint="@color/md_theme_dark_primary">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:textColor="@color/md_theme_light_primary"
+            android:textColor="@color/md_theme_dark_primary"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -107,7 +107,7 @@
         android:layout_marginHorizontal="14dp"
         android:layout_marginVertical="4dp"
         android:hint="@string/password"
-        android:textColorHint="@color/md_theme_light_primary"
+        android:textColorHint="@color/md_theme_dark_primary"
         app:boxBackgroundMode="outline"
         app:boxCornerRadiusBottomEnd="8dp"
         app:boxCornerRadiusBottomStart="8dp"
@@ -120,19 +120,18 @@
         app:counterMaxLength="50"
         app:counterOverflowTextColor="@color/red700"
         app:endIconMode="password_toggle"
-        app:endIconTint="@color/md_theme_light_primary"
+        app:endIconTint="@color/md_theme_dark_primary"
         app:hintAnimationEnabled="true"
         app:hintEnabled="true"
-        app:hintTextColor="@color/md_theme_light_primary"
+        app:hintTextColor="@color/md_theme_dark_primary"
         app:startIconDrawable="@drawable/outline_lock_24"
-        app:startIconTint="@color/md_theme_light_primary">
+        app:startIconTint="@color/md_theme_dark_primary">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:textColor="@color/md_theme_light_primary"
+            android:textColor="@color/md_theme_dark_primary"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
-
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WorkIn</string>
+    <string name="register">تسجيل حساب جديد</string>
+    <string name="please_fill_free_to_create_your_first_account_on_workin">كن مطمئنا مع انشاء حساب جديد</string>
+    <string name="name">الاسم</string>
+    <string name="forgotten_password">هل نسيت كلمة السر</string>
+    <string name="password">كلمة السر</string>
+    <string name="email">البريد الاكتروني</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="login_in_easy_and_scure_way_by_biometeric_login_that_will_be_added_later">كم الان بتسجيل الامن من خلال التعرف الحيوي والذي سيضاف في المستقبل القريب</string>
+    <string name="reset">اعدة الضبط</string>
+    <string name="network_excep">تحقق من الاتصال بالانترنيت</string>
+    <string name="error_login_user_not_found">هذا المستخدم غير موجود بالتطبيق</string>
+    <string name="error_login_wrong_password" translatable="false">كلمة مرور خاطئة</string>
+    <string name="error_login_email_already_in_use" translatable="false">هذا البريد الالكتروني موجود علي حساب اخر</string>
+    <string name="email_verification">تفعيل البريد الاكتروني</string>
+    <string name="check_mail_box_to_verify_email_and_sign_in_with_you_email">قم بتفعيل البريد الاكتروني من خلال صندوق البريد الخاص بك</string>
+    <string name="essentials">الرئيسي</string>
+    <string name="select_an_appropriate_photo_for_you_from_your_gallery_prefered_to_be_formal_and_white_back_ground">قم باختيار صورة مناسبة لك من معرض الصور مراعاه ان تكون رسمية و يفضل خلفية بيضاء</string>
+    <string name="pick_one">اختر صورة</string>
+
+    <string name="skip">تخطي</string>
+</resources>

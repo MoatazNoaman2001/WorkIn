@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:paddingHorizontal="18dp"
+    android:paddingVertical="14dp"
+    android:fitsSystemWindows="true"
+    android:gravity="center_vertical"
+    android:layout_height="130dp">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="40dp"
+        tools:src="@drawable/splash_icon"
+        android:layout_height="40dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="8dp">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:id="@+id/headLine"
+            android:text="Header"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+            android:fontFamily="@font/alata"
+            android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:id="@+id/subHead"
+            android:text="sub header"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

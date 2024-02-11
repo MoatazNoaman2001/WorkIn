@@ -13,10 +13,31 @@
         <action
             android:id="@+id/action_signInFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_forgottenPasswordFragment"
+            app:destination="@id/forgottenPasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.workin.presentation.signOut.SignUpFragment"
+        android:name="com.example.workin.presentation.signOut.RegisterFragment"
         android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up" />
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_emailRecicvedFragment"
+            app:destination="@id/emailRecicvedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgottenPasswordFragment"
+        android:name="com.example.workin.presentation.forgottenPassword.ForgottenPasswordFragment"
+        android:label="fragment_forgotten_password"
+        tools:layout="@layout/fragment_forgotten_password" >
+        <action
+            android:id="@+id/action_forgottenPasswordFragment_to_emailRecicvedFragment"
+            app:destination="@id/emailRecicvedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/emailRecicvedFragment"
+        android:name="com.example.workin.presentation.forgottenPassword.EmailReceivedFragment"
+        android:label="fragment_email_recicved"
+        tools:layout="@layout/fragment_email_recicved" />
 </navigation>

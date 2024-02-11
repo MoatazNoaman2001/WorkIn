@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/first_section"
+        android:title="@string/essentials">
+        <menu>
+            <item
+                android:id="@+id/ProfilePageFragment"
+                android:icon="@drawable/baseline_person_24"
+                android:title="Profile"/>
+        </menu>
+    </item>
+</menu>

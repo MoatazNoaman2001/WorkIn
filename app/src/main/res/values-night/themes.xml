@@ -27,5 +27,15 @@
         <item name="colorOnSurfaceInverse">@color/md_theme_dark_inverseOnSurface</item>
         <item name="colorSurfaceInverse">@color/md_theme_dark_inverseSurface</item>
         <item name="colorPrimaryInverse">@color/md_theme_dark_inversePrimary</item>
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
+    <style name="Widget.MaterialComponents.Toolbar.Primary.Edited" parent="ThemeOverlay.MaterialComponents.Toolbar.Primary">
+        <item name="navigationIcon">@color/md_theme_dark_secondary</item>
+        <item name="titleTextColor">@color/md_theme_dark_secondary</item>
+    </style>
+<!--    &lt;!&ndash; Base application theme. &ndash;&gt;-->
+<!--    <style name="Base.Theme.WorkIn.SplashScreen" parent="Theme.Material3.DayNight.NoActionBar">-->
+<!--        &lt;!&ndash; Customize your dark theme here. &ndash;&gt;-->
+<!--        &lt;!&ndash; <item name="colorPrimary">@color/my_dark_primary</item> &ndash;&gt;-->
+<!--    </style>-->
 </resources>
