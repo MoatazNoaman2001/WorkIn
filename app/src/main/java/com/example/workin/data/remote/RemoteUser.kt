@@ -1,5 +1,6 @@
 package com.example.workin.data.remote
 
+import com.example.workin.domain.model.Pic
 import com.example.workin.domain.model.User
 import java.io.Serializable
 
@@ -8,11 +9,12 @@ data class RemoteUser(
     val email: String,
     val id: String? = "",
     val token: String,
-    val hasPic: Boolean,
-    val picCloudUri: String,
-    val category: String
+    val personalImage:Pic,
+    val coverPic:Pic,
+    val category: String,
+    var subHead:String?="",
 ): Serializable{
-    constructor() : this("" , "", "", "" ,false , "" , "")
+    constructor() : this("" , "", "", "" , Pic() , Pic(), "")
 }
 
-fun RemoteUser.toUser() = User(name , email, "", id,token, hasPic, "" , picCloudUri, category)
+fun RemoteUser.toUser() = User(name , email, "", id,token, personalImage, category,subHead, coverPic)

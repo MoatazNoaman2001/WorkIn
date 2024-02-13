@@ -90,4 +90,6 @@
     <string name="manager_phrase">"this category for manager and team leaders, whom search mew condidates, analytic team work , preview current status and analytic for newly added projects "</string>
     <string name="explorer_phrase">this category for peaple joining workIn for first time , need to get idea about every thing in platform and then decide a new way or path in the plarform\n</string>
     <string name="profile">Profile</string>
+    <string name="simple_bio">Iam computer science, Bioinformatics department graduate 2023, I learned by joining courses and start making apps in android for about 3 years and half since 2020,I have demonstrated expertise in Java and Kotlin. Skilled in Machine Learning, Deep Neural Networks, Cloud Computing, Cloud Database, Database Design, and Graphs and Algorithms. Strongly committed to developing high-quality mobile applications that leverage cutting-edge technologies. Proven ability to optimize performance and functionality through the implementation of AI and database solutions. A valuable asset to any organization looking to deliver innovative mobile solutions.</string>
+    <string name="resume"><u>resume</u></string>
 </resources>

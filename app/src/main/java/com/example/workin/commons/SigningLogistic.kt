@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.example.workin.R
 import com.example.workin.data.remote.RemoteUser
 import com.example.workin.data.remote.toUser
+import com.example.workin.domain.model.Pic
 import com.example.workin.domain.model.User
 import com.example.workin.domain.model.toRemote
 import com.google.firebase.FirebaseException
@@ -99,7 +100,7 @@ object SigningLogistic {
                 val request = userProfileChangeRequest { displayName = name }
                 user.updateProfile(request)
             }
-            val mu = User(name, email, password, user?.uid , "",false , "" , "" , "")
+            val mu = User(name, email, password, user?.uid , "", Pic() , "" , "")
             storeUserCloud(mu , preferences)
             Result.success("user created successfully")
         } catch (e: FirebaseException) {
@@ -136,7 +137,7 @@ object SigningLogistic {
         var isExist = true
         var user = checkCurrentUser(preferences, FBuser)
         if (user == null || (user.email != FBuser.email)) isExist = false
-        if (user == null) user = User(FBuser.displayName!! , FBuser.email!! , "" , FBuser.uid , token ="", false , "" , "" , "")
+        if (user == null) user = User(FBuser.displayName!! , FBuser.email!! , "" , FBuser.uid , token ="", Pic() , "" , "" )
         else { storeInPreference(preferences, user); isExist = true }
         if (!isExist) storeUserCloud(user, preferences)
         return user

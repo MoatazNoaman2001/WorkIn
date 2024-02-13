@@ -116,7 +116,7 @@ class MainAppActivity : AppCompatActivity() {
     private fun checkUserStatus() {
         val user = loadUser()
         Log.d(TAG, "checkUserStatus: user : $user")
-        if (user.picCloudUri.isEmpty() && user.picFileUri.isEmpty())
+        if (user.personalImage.picCloudUri.isEmpty() && user.personalImage.picFileUri.isEmpty())
             storageReference.downloadUrl.addOnSuccessListener {
                 Log.d(TAG, "checkUserStatus: img uri: $it")
                 if (it != null)
@@ -127,7 +127,7 @@ class MainAppActivity : AppCompatActivity() {
                 setAvatarIcon(R.drawable.anonymous)
             }
         else
-            setAvatarIcon(user.picFileUri.ifEmpty { user.picCloudUri })
+            setAvatarIcon(user.personalImage.picFileUri.ifEmpty { user.personalImage.picCloudUri })
     }
 
     private fun setAvatarIcon(url: Any) {

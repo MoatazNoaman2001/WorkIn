@@ -24,6 +24,7 @@ import com.example.workin.R
 import com.example.workin.commons.Constant
 import com.example.workin.commons.SigningLogistic
 import com.example.workin.databinding.FragmentUploadProfileImageBinding
+import com.example.workin.domain.model.Pic
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.StorageTask
@@ -41,7 +42,7 @@ import javax.inject.Named
 private const val TAG = "UploadProfileImage"
 
 @AndroidEntryPoint
-class UploadProfileImage : Fragment() {
+class UploadProfileImageFragment : Fragment() {
 
     private lateinit var _binding: FragmentUploadProfileImageBinding
     private val binding get() = _binding
@@ -117,10 +118,7 @@ class UploadProfileImage : Fragment() {
                     Toast.makeText(requireContext(), "done", Toast.LENGTH_SHORT).show()
                     val user = SigningLogistic.checkCurrentUser(preferences)
                     binding.skipBtn.text = "Next"
-                    user?.hasPic = true
-                    user?.picFileUri = fileDir.toString()
-                    user?.picCloudUri = userStorageRef.child(user?.id!!)
-                        .child(Constant.ImgProfile).downloadUrl.await().toString()
+                    user?.personalImage = Pic(true , fileDir.toString() , userStorageRef.child(user?.id!!).child(Constant.ImgProfile).downloadUrl.await().toString())
                     SigningLogistic.storeUserCloud(user, preferences)
                 }
             }.addOnFailureListener {

@@ -27,6 +27,13 @@
     <string name="developer">مطور برامج</string>
     <string name="manager">مدير</string>
     <string name="explorer">مكتشف</string>
+    <string name="talented_phrase">تهتم هذه الفئة بالشباب الموهوبين والماهرين الذين يبحثون عن المسابقات وتحسين المهارات في إطار عملهم، هذه الفئة غير مهتمة بالتوظيف كثيراً</string>
+    <string name="developer_phrase">هذه الفئة مخصصة للمطورين الذين يبحثون عن فرص جديدة في الشركة وأدوار جديدة في الحياة وتحسين مسارهم الوظيفي واكتشاف التكنولوجيا الجديدة ومتابعة المقالات المضافة حديثًا</string>
+    <string name="manager_phrase">هذه الفئة للمديرين وقادة الفرق، الذين يقومون بالبحث عن المرشحين، وتحليل العمل الجماعي، ومعاينة الوضع الحالي وتحليل المشاريع المضافة حديثًا</string>
+    <string name="explorer_phrase">هذه الفئة للأشخاص الذين ينضمون إلى العمل لأول مرة، تحتاج إلى الحصول على فكرة عن كل شيء في المنصة ثم تحديد طريقة أو مسار جديد في المنصة</string>
+    <string name="profile">الصفحة الشخصية</string>
+    <string name="simple_bio">Iam computer science, Bioinformatics department graduate 2023, I learned by joining courses and start making apps in android for about 3 years and half since 2020,I have demonstrated expertise in Java and Kotlin. Skilled in Machine Learning, Deep Neural Networks, Cloud Computing, Cloud Database, Database Design, and Graphs and Algorithms. Strongly committed to developing high-quality mobile applications that leverage cutting-edge technologies. Proven ability to optimize performance and functionality through the implementation of AI and database solutions. A valuable asset to any organization looking to deliver innovative mobile solutions.</string>
+    <string name="resume"><u>ملف التعريفي</u></string>
     <string name="this_category_is_for_student_who_want_to_know_about_each_feid_and_seak_to_collect_scientific_knowledge_and_researches_this_focuses_on_gain_experience_not_much_in_work_and_earn_money">هذه الفئة مخصصة للطلاب الذين يرغبون في التعرف على كل مجال ويسعون إلى جمع المعرفة العلمية والأبحاث، وهذا يركز على اكتساب الخبرة وليس الكثير في العمل وكسب المال</string>
     <string name="pick_your_category_from_the_below_list_according_to_your_current_education_and_career_path_make_sure_that_this_category_appropriate_for_you">اختر فئتك من القائمة أدناه وفقًا لمسارك التعليمي والمهني الحالي، وتأكد من أن هذه الفئة مناسبة لك</string>
 </resources>

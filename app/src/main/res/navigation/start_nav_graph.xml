@@ -48,7 +48,7 @@
         tools:layout="@layout/fragment_email_recicved" />
     <fragment
         android:id="@+id/uploadProfileImage"
-        android:name="com.example.workin.presentation.picUpload.UploadProfileImage"
+        android:name="com.example.workin.presentation.picUpload.UploadProfileImageFragment"
         android:label="fragment_upload_profile_image"
         tools:layout="@layout/fragment_upload_profile_image" >
         <action

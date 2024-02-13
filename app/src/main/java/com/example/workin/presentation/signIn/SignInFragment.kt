@@ -78,7 +78,7 @@ class SignInFragment : Fragment() {
                             true -> {
                                 res.onSuccess {user->
                                     enableLogin()
-                                    if (!user.hasPic)
+                                    if (!user.personalImage.hasPic)
                                         controller.navigate(R.id.action_signInFragment_to_uploadProfileImage)
                                     else if (user.category.isEmpty())
                                         controller.navigate(R.id.action_signInFragment_to_usersCategoryFragment)
@@ -135,7 +135,7 @@ class SignInFragment : Fragment() {
                 Log.d(TAG, "CheckExistAccount: $storedUser")
                 MainScope().launch {
                     if (storedUser != null) {
-                        if (!storedUser.hasPic) {
+                        if (!storedUser.personalImage.hasPic) {
                             controller.navigate(R.id.action_signInFragment_to_uploadProfileImage)
                         } else if(storedUser.category.isEmpty()){
                             controller.navigate(R.id.action_signInFragment_to_usersCategoryFragment)

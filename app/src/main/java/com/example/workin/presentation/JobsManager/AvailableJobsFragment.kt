@@ -1,11 +1,10 @@
-package com.example.workin.presentation.JobsManger
+package com.example.workin.presentation.JobsManager
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.workin.R
 import com.example.workin.databinding.FragmentAvailableJobsBinding
 import dagger.hilt.android.AndroidEntryPoint
 

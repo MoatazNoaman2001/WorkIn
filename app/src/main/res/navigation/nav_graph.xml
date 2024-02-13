@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.example.workin.FirstFragment"
+        android:name="com.example.workin.presentation.posts.PostsFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.workin.SecondFragment"
+        android:name="com.example.workin.presentation.invitations.InvitationFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
 
