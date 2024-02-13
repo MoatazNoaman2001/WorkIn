@@ -77,4 +77,17 @@
     <string name="select_an_appropriate_photo_for_you_from_your_gallery_prefered_to_be_formal_and_white_back_ground">Select an appropriate photo for you from your gallery, prefered to be formal and white back ground</string>
     <string name="pick_one">Pick one</string>
     <string name="skip">Skip</string>
+    <string name="pick_your_category_from_the_below_list_according_to_your_current_education_and_career_path_make_sure_that_this_category_appropriate_for_you">Pick your category from the below list according to your current education and career path, make sure that this category Appropriate for you</string>
+    <string name="student">Student</string>
+    <string name="students">Students</string>
+    <string name="talented">Talanted</string>
+    <string name="developer">Developer</string>
+    <string name="manager">Manager</string>
+    <string name="explorer">Explorer</string>
+    <string name="this_category_is_for_student_who_want_to_know_about_each_feid_and_seak_to_collect_scientific_knowledge_and_researches_this_focuses_on_gain_experience_not_much_in_work_and_earn_money">This category is for student who want to know about each field and seek to collect scientific knowledge and researches, this focuses on gain experience not much in work and earn money</string>
+    <string name="talented_phrase">this category is concerned for talanted and skilled youth, whom search for compititions and skills improvment in there frame work,this category is not intersted in job hire to much</string>
+    <string name="developer_phrase">"this category is for developer whom searching for new oppotunity in company and new roles in life and imporve thier carear path , discover new technology and follow newly added articles\n "</string>
+    <string name="manager_phrase">"this category for manager and team leaders, whom search mew condidates, analytic team work , preview current status and analytic for newly added projects "</string>
+    <string name="explorer_phrase">this category for peaple joining workIn for first time , need to get idea about every thing in platform and then decide a new way or path in the plarform\n</string>
+    <string name="profile">Profile</string>
 </resources>

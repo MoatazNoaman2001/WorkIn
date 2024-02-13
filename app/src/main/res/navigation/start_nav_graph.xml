@@ -16,10 +16,16 @@
         <action
             android:id="@+id/action_signInFragment_to_forgottenPasswordFragment"
             app:destination="@id/forgottenPasswordFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_uploadProfileImage"
+            app:destination="@id/uploadProfileImage" />
+        <action
+            android:id="@+id/action_signInFragment_to_usersCategoryFragment"
+            app:destination="@id/usersCategoryFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.workin.presentation.signOut.RegisterFragment"
+        android:name="com.example.workin.presentation.register.RegisterFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
@@ -40,4 +46,18 @@
         android:name="com.example.workin.presentation.forgottenPassword.EmailReceivedFragment"
         android:label="fragment_email_recicved"
         tools:layout="@layout/fragment_email_recicved" />
+    <fragment
+        android:id="@+id/uploadProfileImage"
+        android:name="com.example.workin.presentation.picUpload.UploadProfileImage"
+        android:label="fragment_upload_profile_image"
+        tools:layout="@layout/fragment_upload_profile_image" >
+        <action
+            android:id="@+id/action_uploadProfileImage_to_usersCategoryFragment"
+            app:destination="@id/usersCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/usersCategoryFragment"
+        android:name="com.example.workin.presentation.userCategories.ui.UsersCategoryFragment"
+        android:label="fragment_users_category"
+        tools:layout="@layout/fragment_users_category" />
 </navigation>

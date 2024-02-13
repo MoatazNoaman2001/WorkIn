@@ -25,4 +25,8 @@
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/profilePageFragment2"
+        android:name="com.example.workin.presentation.Profile.ui.ProfilePageFragment"
+        android:label="@string/profile" />
 </navigation>

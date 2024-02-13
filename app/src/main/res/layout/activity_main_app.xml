@@ -2,42 +2,77 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/drawerLayout"
-    tools:openDrawer="start"
-    tools:context=".MainAppActivity">
+    tools:context=".MainAppActivity"
+    tools:openDrawer="start">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
+        android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        android:layout_height="match_parent">
+        android:orientation="vertical">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <include layout="@layout/content_main_app" />
+        </androidx.core.widget.NestedScrollView>
+
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true">
 
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/toolbar"
+            <com.google.android.material.search.SearchBar
+                android:id="@+id/searchBar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize" />
-
+                android:layout_height="wrap_content"
+                android:hint="search"
+                app:menu="@menu/search_bar_avatar_menu" />
         </com.google.android.material.appbar.AppBarLayout>
 
-        <include layout="@layout/content_main_app" />
+        <com.google.android.material.search.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:maxLines="1"
+            app:layout_anchor="@id/searchBar"
+            app:queryHint="Search">
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/searchResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </com.google.android.material.search.SearchView>
 
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:labelVisibilityMode="unlabeled"
+            app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+            app:menu="@menu/main_app_bottom_nav_menu" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/drawerBook"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/drawerBook"
         android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        android:visibility="gone"
+        app:bottomInsetScrimEnabled="true"
         app:drawerLayoutCornerSize="16dp"
         app:headerLayout="@layout/main_app_drawer_header"
-        app:bottomInsetScrimEnabled="true"
-
-        app:menu="@menu/main_app_drawer_menu"/>
+        app:menu="@menu/main_app_drawer_menu" />
 </androidx.drawerlayout.widget.DrawerLayout>

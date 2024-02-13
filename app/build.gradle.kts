@@ -86,6 +86,11 @@ dependencies {
     implementation ("com.intuit.sdp:sdp-android:1.1.0")
     //glide
     implementation ("com.github.bumptech.glide:glide:4.16.0")
+    //lottie
+    val lottieVersion = "3.5.0"
+    implementation ("com.airbnb.android:lottie:$lottieVersion")
+    //gson
+    implementation("com.google.code.gson:gson:2.10.1")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

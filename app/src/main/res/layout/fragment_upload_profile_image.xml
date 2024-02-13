@@ -32,7 +32,7 @@
                 tools:src="@drawable/splash_icon" />
 
             <com.google.android.material.progressindicator.CircularProgressIndicator
-                android:id="@+id/progressIndecator"
+                android:id="@+id/progressIndicator"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -43,26 +43,57 @@
                 app:layout_constraintVertical_bias="0.5"
                 app:trackCornerRadius="8dp"
                 app:trackThickness="2dp"
-                tools:progress="50" />
+                tools:progress="0"
+                android:max="100"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="@dimen/_50sdp"
             android:text="@string/select_an_appropriate_photo_for_you_from_your_gallery_prefered_to_be_formal_and_white_back_ground"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.Material3.BodyLarge" />
 
-        <com.google.android.material.button.MaterialButton
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="48dp"
-            android:text="@string/pick_one" />
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/pic_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="48dp"
+                android:text="@string/pick_one"
+                android:layout_marginTop="@dimen/_14sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:indicatorColor="@color/white"
+                android:indeterminate="true"
+                app:trackCornerRadius="4dp"
+                android:padding="6dp"
+                android:visibility="gone"
+                android:id="@+id/imgUploadLoading"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/pic_btn"
+                app:layout_constraintStart_toStartOf="@+id/pic_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintVertical_bias="0.5" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/pic_btn"
+        android:id="@+id/skipBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/Widget.Material3.Button.TextButton"

@@ -1,4 +1,4 @@
-package com.example.workin.presentation.Profile
+package com.example.workin.presentation.Profile.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

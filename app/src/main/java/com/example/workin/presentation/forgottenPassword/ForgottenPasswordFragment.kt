@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.workin.R
+import com.example.workin.commons.Constant
 import com.example.workin.databinding.FragmentForgottenPasswordBinding
 
 
@@ -18,9 +19,9 @@ class ForgottenPasswordFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         controller = Navigation.findNavController(requireView())
-        val email = controller.previousBackStackEntry?.savedStateHandle?.get<String>("email")
+        val email = controller.previousBackStackEntry?.savedStateHandle?.get<String>(Constant.email)
         if (!email.isNullOrEmpty()){
-
+            binding.EmailTextInput.editText?.setText(email)
         }
     }
 

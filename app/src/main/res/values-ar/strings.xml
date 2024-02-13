@@ -21,4 +21,12 @@
     <string name="pick_one">اختر صورة</string>
 
     <string name="skip">تخطي</string>
+    <string name="student">طالب</string>
+    <string name="students">طلاب</string>
+    <string name="talented">محترف</string>
+    <string name="developer">مطور برامج</string>
+    <string name="manager">مدير</string>
+    <string name="explorer">مكتشف</string>
+    <string name="this_category_is_for_student_who_want_to_know_about_each_feid_and_seak_to_collect_scientific_knowledge_and_researches_this_focuses_on_gain_experience_not_much_in_work_and_earn_money">هذه الفئة مخصصة للطلاب الذين يرغبون في التعرف على كل مجال ويسعون إلى جمع المعرفة العلمية والأبحاث، وهذا يركز على اكتساب الخبرة وليس الكثير في العمل وكسب المال</string>
+    <string name="pick_your_category_from_the_below_list_according_to_your_current_education_and_career_path_make_sure_that_this_category_appropriate_for_you">اختر فئتك من القائمة أدناه وفقًا لمسارك التعليمي والمهني الحالي، وتأكد من أن هذه الفئة مناسبة لك</string>
 </resources>

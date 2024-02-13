@@ -36,6 +36,7 @@ object AppBuilder {
     @Singleton
     fun usersStorageProvider() = FirebaseStorage.getInstance().getReference(Constant.userStore)
 
+
     @Singleton
     @Provides
     fun usersStore() : CollectionReference = FirebaseFirestore.getInstance().collection(Constant.userStore)

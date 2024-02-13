@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/studentCard"
+    android:layout_width="280dp"
+    android:layout_height="280dp"
+    android:layout_margin="8dp"
+    android:layout_weight="0.5"
+    app:cardElevation="4dp">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:orientation="vertical">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tile"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium.Edited"
+            android:text="@string/students"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+            android:text="@string/this_category_is_for_student_who_want_to_know_about_each_feid_and_seak_to_collect_scientific_knowledge_and_researches_this_focuses_on_gain_experience_not_much_in_work_and_earn_money"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieAnimator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:lottie_rawRes="@raw/student_anim"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</com.google.android.material.card.MaterialCardView>

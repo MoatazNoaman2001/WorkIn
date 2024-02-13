@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.workin.R
@@ -27,6 +29,13 @@ class EmailReceivedFragment : Fragment() {
             binding.headLine.text = getString(R.string.email_verification)
             binding.subtitle.text = getString(R.string.check_mail_box_to_verify_email_and_sign_in_with_you_email)
         }
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner , object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                controller.popBackStack()
+                controller.popBackStack()
+            }
+        })
 
     }
 

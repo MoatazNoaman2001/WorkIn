@@ -1,4 +1,4 @@
-package com.example.workin.presentation.signOut
+package com.example.workin.presentation.register
 
 import androidx.lifecycle.ViewModel
 
