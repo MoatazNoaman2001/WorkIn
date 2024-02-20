@@ -8,6 +8,21 @@
     android:orientation="vertical"
     tools:context=".presentation.signIn.SignInFragment">
 
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/loadingUser"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:indicatorColor="@color/md_theme_light_primary"
+        app:trackThickness="8dp" />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,6 +35,7 @@
         app:layout_constraintBottom_toTopOf="@+id/appCompatTextView"
         app:layout_constraintEnd_toEndOf="@+id/appCompatTextView"
         app:layout_constraintStart_toStartOf="@+id/appCompatTextView" />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/appCompatTextView"
         android:layout_width="match_parent"
@@ -75,8 +91,8 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:textColor="@color/md_theme_light_primary"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="@color/md_theme_light_primary" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -100,6 +116,7 @@
             app:counterEnabled="true"
             app:counterMaxLength="50"
             app:counterOverflowTextColor="@color/red700"
+            app:endIconCheckable="false"
             app:endIconMode="password_toggle"
             app:endIconTint="@color/md_theme_light_primary"
             app:hintAnimationEnabled="true"
@@ -110,15 +127,15 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:textColor="@color/md_theme_light_primary"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="@color/md_theme_light_primary" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/forgottenPasswordBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="18dp"
-            android:id="@+id/forgottenPasswordBtn"
             android:autoLink="all"
             android:text="@string/forgotten_password"
             android:textAlignment="textEnd" />
@@ -126,8 +143,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
-            android:layout_marginTop="@dimen/_14sdp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_28sdp">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/loginBtn"
@@ -158,13 +175,13 @@
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/registering"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/register"
-        android:id="@+id/registering"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
+        android:text="@string/register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"

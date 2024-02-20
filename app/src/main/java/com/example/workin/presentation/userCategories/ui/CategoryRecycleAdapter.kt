@@ -4,10 +4,12 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.workin.MainAppActivity
+import com.example.workin.R
 import com.example.workin.commons.SigningLogistic
 import com.example.workin.databinding.UserTypeCategorySelectRecycleItemBinding
 import com.example.workin.presentation.userCategories.data.models.Category
@@ -30,12 +32,13 @@ class CategoryRecycleAdapter(val preferences: SharedPreferences , val reference:
             binding.tile.text = binding.root.context.getString(category.title)
             binding.subtitle.text = binding.root.context.getString(category.desc)
             binding.lottieAnimator.setAnimation(category.reId)
-            binding.root.setOnClickListener {
+            binding.root.setOnClickListener {view->
                 val user = SigningLogistic.getUserFromPreference(preferences)
                 user?.category = binding.root.context.getString(category.title)
                 reference.set(user!!).addOnSuccessListener {
                     SigningLogistic.storeInPreference(preferences , user)
-                    binding.root.context.startActivity(Intent( binding.root.context , MainAppActivity::class.java))
+                    Navigation.findNavController(view).navigate(R.id.action_usersCategoryFragment_to_subtitleAndSummaryFragment)
+//                    binding.root.context.startActivity(Intent( binding.root.context , MainAppActivity::class.java))
                 }.addOnFailureListener {
                     SigningLogistic.FB_ExcpetionsHandler(it, binding.root.context)
                 }

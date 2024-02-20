@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">WorkIn</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">hello blank fragment</string>
@@ -92,4 +92,16 @@
     <string name="profile">Profile</string>
     <string name="simple_bio">Iam computer science, Bioinformatics department graduate 2023, I learned by joining courses and start making apps in android for about 3 years and half since 2020,I have demonstrated expertise in Java and Kotlin. Skilled in Machine Learning, Deep Neural Networks, Cloud Computing, Cloud Database, Database Design, and Graphs and Algorithms. Strongly committed to developing high-quality mobile applications that leverage cutting-edge technologies. Proven ability to optimize performance and functionality through the implementation of AI and database solutions. A valuable asset to any organization looking to deliver innovative mobile solutions.</string>
     <string name="resume"><u>resume</u></string>
+    <string name="hello_to_workin">Hello to WorkIn</string>
+    <string name="initial_title_home_fragment">First we are WorkIn, platfrom for hiring and job search , freelancing , learning and some other stuff \n this awsome platfrom is developed by awsome engeneer named by Mr Moataz, and he is so exited to see you are 🤩</string>
+    <string name="seems_to_be_your_first_visit_to_workin_welcome_mr_there_some_setps_need_to_be_taken_for_continue">seems to be your first visit to WorkIn, Welcome Mr , there some setps need to be taken for continue</string>
+    <string name="descibe_your_self_below_or_in_anther_words_give_as_a_summary_about_you">Descibe your self below, or in anther words, give as a summary about you</string>
+    <string name="who_are_you">who are You?!</string>
+    <string name="summary">Summary</string>
+    <string name="sub_title">Sub title</string>
+    <string name="write_you_phone_number_in_the_text_below">write you phone number in the text below</string>
+    <string name="verify_number">Verify Number</string>
+    <string name="phonenumber">PhoneNumber</string>
+    <string name="just_select_your_birthday">Just Select your birthDay</string>
+    <string name="birthday">BirthDay</string>
 </resources>

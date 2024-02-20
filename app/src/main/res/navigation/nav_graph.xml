@@ -28,5 +28,27 @@
     <fragment
         android:id="@+id/profilePageFragment2"
         android:name="com.example.workin.presentation.Profile.ui.ProfilePageFragment"
-        android:label="@string/profile" />
+        android:label="@string/profile" >
+        <action
+            android:id="@+id/action_profilePageFragment2_to_editHeadFragment"
+            app:destination="@id/editHeadFragment"
+            app:enterAnim="@anim/enter_right"
+            app:exitAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/editHeadFragment"
+        android:name="com.example.workin.presentation.Profile.ui.EditHeadFragment"
+        android:label="edit head"
+        tools:layout="@layout/fragment_edit_head" />
+    <fragment
+        android:id="@+id/availableJobsFragment"
+        android:name="com.example.workin.presentation.JobsManager.AvailableJobsFragment"
+        android:label="fragment_available_jobs"
+        tools:layout="@layout/fragment_available_jobs" />
+    <fragment
+        android:id="@+id/chatListFragment"
+        android:name="com.example.workin.presentation.chat.ui.ChatListFragment"
+        android:label="fragment_chat_list"
+        tools:layout="@layout/fragment_chat_list" />
 </navigation>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_height="match_parent"
+    tools:context=".AdditionalInfoFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:fontFamily="@font/alatsi"
+        android:textColor="@color/md_theme_dark_primary"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+        android:layout_marginTop="@dimen/_22sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:text="@string/write_you_phone_number_in_the_text_below"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_weight="0.2"
+            android:layout_height="wrap_content"
+            android:id="@+id/phoneNumberTextInput"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusBottomEnd="14dp"
+            app:boxCornerRadiusTopStart="14dp"
+            app:boxCornerRadiusTopEnd="14dp"
+            app:boxCornerRadiusBottomStart="14dp"
+            app:boxStrokeWidth="2dp"
+            app:boxStrokeErrorColor="@color/red700"
+            app:hintEnabled="true"
+            android:hint="@string/phonenumber"
+            app:boxStrokeColor="@color/md_theme_dark_primary"
+            app:hintTextColor="@color/md_theme_dark_primary"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:id="@+id/verifyBtn"
+            android:layout_height="match_parent"
+            android:text="@string/verify_number"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="4dp"
+        android:id="@+id/OTP_Layout"
+        android:visibility="gone"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_weight="0.2"
+            android:layout_height="wrap_content"
+            android:id="@+id/OtpCodeTextInput"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusBottomEnd="14dp"
+            app:boxCornerRadiusTopStart="14dp"
+            app:boxCornerRadiusTopEnd="14dp"
+            app:boxCornerRadiusBottomStart="14dp"
+            app:boxStrokeWidth="2dp"
+            app:boxStrokeErrorColor="@color/red700"
+            app:hintEnabled="true"
+            android:hint="OTP"
+            app:boxStrokeColor="@color/md_theme_dark_primary"
+            app:hintTextColor="@color/md_theme_dark_primary"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/verify_otp_loading"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/VerifyOtpBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/verify_number"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:fontFamily="@font/alatsi"
+        android:textColor="@color/md_theme_dark_primary"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+        android:layout_marginTop="@dimen/_22sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:text="@string/just_select_your_birthday"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/birthDayTextInput"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        app:boxCornerRadiusBottomEnd="14dp"
+        app:boxCornerRadiusTopStart="14dp"
+        app:boxCornerRadiusTopEnd="14dp"
+        app:boxCornerRadiusBottomStart="14dp"
+        app:boxStrokeWidth="2dp"
+        app:boxStrokeErrorColor="@color/red700"
+        app:hintEnabled="true"
+        app:endIconDrawable="@drawable/round_calendar_month_24"
+        app:endIconTint="@color/md_theme_dark_primary"
+        app:endIconMode="custom"
+        android:hint="@string/birthday"
+        app:boxStrokeColor="@color/md_theme_dark_primary"
+        app:hintTextColor="@color/md_theme_dark_primary"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:enabled="false"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:fontFamily="@font/alatsi"
+        android:textColor="@color/md_theme_dark_primary"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+        android:layout_marginTop="@dimen/_22sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:text="Optional-Need To know Your Location"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LocationTextInputLayout"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        app:boxCornerRadiusBottomEnd="14dp"
+        app:boxCornerRadiusTopStart="14dp"
+        app:boxCornerRadiusTopEnd="14dp"
+        app:boxCornerRadiusBottomStart="14dp"
+        app:boxStrokeWidth="2dp"
+        app:boxStrokeErrorColor="@color/red700"
+        app:hintEnabled="true"
+        app:endIconDrawable="@drawable/round_location_on_24"
+        app:endIconTint="@color/md_theme_dark_primary"
+        app:endIconMode="custom"
+        android:hint="location"
+        app:helperText="its preferred to know you location for near connection in your area, do not worry your data is always secured"
+        app:helperTextEnabled="true"
+        app:helperTextTextColor="@color/md_theme_dark_primary"
+        app:helperTextTextAppearance="@style/TextAppearance.Material3.BodyMedium"
+        app:boxStrokeColor="@color/md_theme_dark_primary"
+        app:hintTextColor="@color/md_theme_dark_primary"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:enabled="false"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_gravity="end"
+        android:id="@+id/next"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_106sdp"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:text="@string/next"/>
+</LinearLayout>

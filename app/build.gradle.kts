@@ -70,6 +70,8 @@ dependencies {
     implementation("com.google.firebase:firebase-perf-ktx:20.5.1") // performance monitoring
     implementation("com.google.firebase:firebase-database-ktx:20.3.0") //firebase Database
     implementation("com.google.firebase:firebase-storage-ktx:20.3.0") //firebase Storage
+    implementation("com.google.firebase:firebase-inappmessaging-ktx:20.4.0") //in-app-messaging
+    implementation("com.google.firebase:firebase-messaging-ktx:23.4.1") // cloud messaging
 
     //splash screen
     implementation("androidx.core:core-splashscreen:1.0.1")

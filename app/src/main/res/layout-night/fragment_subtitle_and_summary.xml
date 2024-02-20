@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".subtitleAndSummaryFragment">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_64sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:textAlignment="textStart"
+        android:fontFamily="@font/alatsi"
+        android:textColor="@color/md_theme_dark_primary"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:text="@string/who_are_you"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/subHeadTextInput"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        app:boxCornerRadiusBottomEnd="14dp"
+        app:boxCornerRadiusTopStart="14dp"
+        app:boxCornerRadiusTopEnd="14dp"
+        app:boxCornerRadiusBottomStart="14dp"
+        app:boxStrokeWidth="2dp"
+        app:boxStrokeErrorColor="@color/red700"
+        app:hintEnabled="true"
+        android:hint="@string/sub_title"
+        app:boxStrokeColor="@color/md_theme_dark_primary"
+        app:hintTextColor="@color/md_theme_dark_primary"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:fontFamily="@font/alatsi"
+        android:textColor="@color/md_theme_dark_primary"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:text="@string/descibe_your_self_below_or_in_anther_words_give_as_a_summary_about_you"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="10"
+        android:id="@+id/SummaryTextInput"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        app:boxCornerRadiusBottomEnd="14dp"
+        app:boxCornerRadiusTopStart="14dp"
+        app:boxCornerRadiusTopEnd="14dp"
+        app:boxCornerRadiusBottomStart="14dp"
+        app:boxStrokeWidth="2dp"
+        app:boxStrokeErrorColor="@color/red700"
+        app:hintEnabled="true"
+        android:hint="@string/summary"
+        app:boxStrokeColor="@color/md_theme_dark_primary"
+        app:hintTextColor="@color/md_theme_dark_primary"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:gravity="start"
+            android:layout_height="match_parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_gravity="end"
+        android:id="@+id/next"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_14sdp"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:text="@string/next"/>
+</LinearLayout>

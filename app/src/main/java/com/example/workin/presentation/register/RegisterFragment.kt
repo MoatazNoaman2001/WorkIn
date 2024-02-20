@@ -2,11 +2,15 @@ package com.example.workin.presentation.register
 
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
+import androidx.core.widget.addTextChangedListener
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.workin.R
@@ -37,6 +41,11 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         controller = Navigation.findNavController(requireView())
+
+        binding.EmailTextInput.editText?.addTextChangedListener {
+            Log.d(TAG, "onViewCreated: ${it.toString()}")
+        }
+
         binding.CreateAccountBtn.setOnClickListener {
             disableBtn()
             val name = binding.NameTextInputLayout.editText?.editableText.toString()
@@ -47,7 +56,7 @@ class RegisterFragment : Fragment() {
                 email.isNotEmpty() ||
                 password.isNotEmpty()
             ) {
-                CoroutineScope(Dispatchers.Unconfined).launch {
+                CoroutineScope(Dispatchers.IO).launch {
                     val res = createNewUser(name, email, password ,preferences)
                     MainScope().launch {
                         when (res.isSuccess) {

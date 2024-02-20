@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="@dimen/_14sdp"
+    tools:context=".presentation.initialStart.HelloFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alata"
+        android:layout_marginTop="200dp"
+        android:text="@string/hello_to_workin"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+        android:textColor="@color/md_theme_dark_primary"
+        android:textStyle="bold"
+        app:fontFamily="@font/allerta_stencil" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:id="@+id/subHead"
+        android:layout_marginTop="@dimen/_9sdp"
+        android:layout_height="wrap_content"
+        android:text="seems to be your first visit to WorkIn, Welcome Mr , there some setps need to be taken for continue"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:id="@+id/title"
+        android:layout_marginTop="@dimen/_19sdp"
+        android:layout_height="wrap_content"
+        android:text="First we are WorkIn, platfrom for hiring and job search , freelancing , learning and some other stuff \n this awsome platfrom is developed by awsome engeneer named by Mr Moataz, and he is so exited to see you are 🤩"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        android:id="@+id/next"
+        style="@style/Widget.Material3.Button.TextButton.Dialog"
+        android:layout_marginTop="330dp"
+        android:layout_gravity="bottom|end"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -17,11 +17,22 @@
             android:id="@+id/action_signInFragment_to_forgottenPasswordFragment"
             app:destination="@id/forgottenPasswordFragment" />
         <action
-            android:id="@+id/action_signInFragment_to_uploadProfileImage"
-            app:destination="@id/uploadProfileImage" />
-        <action
             android:id="@+id/action_signInFragment_to_usersCategoryFragment"
             app:destination="@id/usersCategoryFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_helloFragment"
+            app:destination="@id/helloFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_signInFragment_to_subtitleAndSummaryFragment"
+            app:destination="@id/subtitleAndSummaryFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_addtionalInfo"
+            app:destination="@id/addtionalInfo" />
+        <action
+            android:id="@+id/action_signInFragment_to_uploadProfileImageFragment"
+            app:destination="@id/uploadProfileImageFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -33,31 +44,54 @@
             app:destination="@id/emailRecicvedFragment" />
     </fragment>
     <fragment
-        android:id="@+id/forgottenPasswordFragment"
-        android:name="com.example.workin.presentation.forgottenPassword.ForgottenPasswordFragment"
-        android:label="fragment_forgotten_password"
-        tools:layout="@layout/fragment_forgotten_password" >
-        <action
-            android:id="@+id/action_forgottenPasswordFragment_to_emailRecicvedFragment"
-            app:destination="@id/emailRecicvedFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/emailRecicvedFragment"
         android:name="com.example.workin.presentation.forgottenPassword.EmailReceivedFragment"
         android:label="fragment_email_recicved"
         tools:layout="@layout/fragment_email_recicved" />
     <fragment
-        android:id="@+id/uploadProfileImage"
-        android:name="com.example.workin.presentation.picUpload.UploadProfileImageFragment"
-        android:label="fragment_upload_profile_image"
-        tools:layout="@layout/fragment_upload_profile_image" >
-        <action
-            android:id="@+id/action_uploadProfileImage_to_usersCategoryFragment"
-            app:destination="@id/usersCategoryFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/usersCategoryFragment"
         android:name="com.example.workin.presentation.userCategories.ui.UsersCategoryFragment"
         android:label="fragment_users_category"
-        tools:layout="@layout/fragment_users_category" />
+        tools:layout="@layout/fragment_users_category" >
+        <action
+            android:id="@+id/action_usersCategoryFragment_to_subtitleAndSummaryFragment"
+            app:destination="@id/subtitleAndSummaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/helloFragment"
+        android:name="com.example.workin.presentation.initialStart.HelloFragment"
+        android:label="fragment_hello"
+        tools:layout="@layout/fragment_hello" >
+        <action
+            android:id="@+id/action_helloFragment_to_usersCategoryFragment"
+            app:destination="@id/usersCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/uploadProfileImageFragment"
+        android:name="com.example.workin.presentation.picUpload.UploadProfileImageFragment"
+        android:label="fragment_upload_profile_image"
+        tools:layout="@layout/fragment_upload_profile_image" />
+    <fragment
+        android:id="@+id/forgottenPasswordFragment"
+        android:name="com.example.workin.presentation.forgottenPassword.ForgottenPasswordFragment"
+        android:label="fragment_forgotten_password"
+        tools:layout="@layout/fragment_forgotten_password" />
+    <fragment
+        android:id="@+id/subtitleAndSummaryFragment"
+        android:name="com.example.workin.subtitleAndSummaryFragment"
+        android:label="fragment_subtitle_and_summary"
+        tools:layout="@layout/fragment_subtitle_and_summary" >
+        <action
+            android:id="@+id/action_subtitleAndSummaryFragment_to_addtionalInfo"
+            app:destination="@id/addtionalInfo" />
+    </fragment>
+    <fragment
+        android:id="@+id/addtionalInfo"
+        android:name="com.example.workin.AdditionalInfoFragment"
+        android:label="fragment_addtional_info"
+        tools:layout="@layout/fragment_addtional_info" >
+        <action
+            android:id="@+id/action_addtionalInfo_to_uploadProfileImageFragment"
+            app:destination="@id/uploadProfileImageFragment" />
+    </fragment>
 </navigation>

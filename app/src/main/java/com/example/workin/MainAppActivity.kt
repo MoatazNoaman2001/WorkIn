@@ -2,19 +2,23 @@ package com.example.workin
 
 import android.content.SharedPreferences
 import android.content.res.Configuration
+import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.core.graphics.drawable.DrawableCompat.wrap
+import androidx.core.graphics.drawable.toDrawable
+import androidx.core.view.isVisible
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -28,10 +32,13 @@ import com.example.workin.commons.Constant
 import com.example.workin.commons.Constant.sharedActivity
 import com.example.workin.databinding.ActivityMainAppBinding
 import com.example.workin.domain.model.User
+import com.example.workin.domain.repo.Resources
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.StorageReference
 import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 import javax.inject.Named
 
@@ -43,17 +50,8 @@ class MainAppActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainAppBinding
     private lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
+    private val mainViewModel: MainActivityViewModelImpl by viewModels()
 
-    @Inject
-    @Named(sharedActivity)
-    lateinit var preferences: SharedPreferences
-
-    @Inject
-    lateinit var auth: FirebaseAuth
-
-    @Inject
-    @Named(Constant.ImgProfileActiviy)
-    lateinit var storageReference: StorageReference
 
     @Inject
     lateinit var gl_loader: RequestManager
@@ -66,20 +64,19 @@ class MainAppActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //make search view action bar
-        setSupportActionBar(binding.searchBar)
+//        setSupportActionBar(binding.searchBar)
         //bind search view with search bar
         binding.searchView.setupWithSearchBar(binding.searchBar)
-        //inflate menu because of un known error
-        binding.searchBar.inflateMenu(R.menu.search_bar_avatar_menu)
 
         val navController = findNavController(R.id.nav_host_fragment_content_main_app)
-        appBarConfiguration = AppBarConfiguration.Builder(navController.graph).setOpenableLayout(binding.drawerLayout)
+        appBarConfiguration =
+            AppBarConfiguration.Builder(navController.graph).setOpenableLayout(binding.drawerLayout)
                 .build()
-        setupActionBarWithNavController(navController, appBarConfiguration)
+//        setupActionBarWithNavController(navController, appBarConfiguration)
         setupWithNavController(binding.drawerBook, navController)
-        setupWithNavController(binding.bottomNavView , navController)
+        setupWithNavController(binding.bottomNavView, navController)
         //set avatar image
-        checkUserStatus()
+        setUserAvaterImage()
 
 
         navController.addOnDestinationChangedListener(object :
@@ -92,6 +89,8 @@ class MainAppActivity : AppCompatActivity() {
                 if (destination.id != R.id.FirstFragment) {
 //                    binding.toolbar.navigationIcon = tintDrawable(ResourcesCompat.getDrawable(resources , R.drawable.baseline_arrow_back_ios_new_24, theme)!!)
                 }
+                binding.bottomNavView.isVisible =
+                    !arrayOf(R.id.editHeadFragment, R.id.chatListFragment).contains(destination.id)
             }
 
             private fun tintDrawable(drawable: Drawable): Drawable {
@@ -108,49 +107,54 @@ class MainAppActivity : AppCompatActivity() {
                     )
                 return drawable
             }
-
         })
 
     }
 
-    private fun checkUserStatus() {
-        val user = loadUser()
-        Log.d(TAG, "checkUserStatus: user : $user")
-        if (user.personalImage.picCloudUri.isEmpty() && user.personalImage.picFileUri.isEmpty())
-            storageReference.downloadUrl.addOnSuccessListener {
-                Log.d(TAG, "checkUserStatus: img uri: $it")
-                if (it != null)
-                    setAvatarIcon(it.toString())
-                else
-                    setAvatarIcon(R.drawable.anonymous)
-            }.addOnFailureListener {
-                setAvatarIcon(R.drawable.anonymous)
+    private fun setUserAvaterImage() {
+        lifecycleScope.launch {
+            mainViewModel.user.collectLatest {
+                when (it) {
+                    is Resources.failed -> {
+
+                    }
+
+                    is Resources.loading -> {
+                        setAvatarIcon(R.drawable.anonymous)
+                    }
+
+                    is Resources.success -> {
+                        val personalPic = it.data.personalImage
+                        if (personalPic.hasPic)
+                            setAvatarIcon(personalPic.picFileUri.ifEmpty { personalPic.picCloudUri })
+                        else
+                            setAvatarIcon(R.drawable.anonymous)
+                    }
+                }
             }
-        else
-            setAvatarIcon(user.personalImage.picFileUri.ifEmpty { user.personalImage.picCloudUri })
+        }
     }
 
     private fun setAvatarIcon(url: Any) {
         Glide.with(this)
-            .asDrawable()
+            .asBitmap()
             .load(url)
-            .centerCrop()
             .circleCrop()
-            .listener(object : RequestListener<Drawable> {
+            .listener(object : RequestListener<Bitmap>{
                 override fun onLoadFailed(
                     e: GlideException?,
                     model: Any?,
-                    target: Target<Drawable>,
+                    target: Target<Bitmap>,
                     isFirstResource: Boolean
                 ): Boolean {
-                    Log.d(TAG, "onLoadFailed: Failed loading image")
+                    Log.d(TAG, "onLoadFailed: Failed to load resource")
                     return true
                 }
 
                 override fun onResourceReady(
-                    resource: Drawable,
+                    resource: Bitmap,
                     model: Any,
-                    target: Target<Drawable>?,
+                    target: Target<Bitmap>?,
                     dataSource: DataSource,
                     isFirstResource: Boolean
                 ): Boolean {
@@ -158,17 +162,16 @@ class MainAppActivity : AppCompatActivity() {
                     return true
                 }
 
-                private fun renderProfile(resource: Drawable) {
-                    Log.d(TAG, "renderProfile: ${binding.searchBar.menu.findItem(R.id.profile_avatar)}")
-                    binding.searchBar.menu.findItem(R.id.profile_avatar).setIcon(resource)
-                }
-
             }).submit()
     }
-
-    private fun loadUser(): User {
-        return Gson().fromJson(preferences.getString(Constant.MainUser, null), User::class.java)
+    private fun renderProfile(resource: Bitmap) {
+        Log.d(
+            TAG,
+            "renderProfile: ${binding.searchBar.menu.findItem(R.id.profile_avatar)}"
+        )
+        binding.searchBar.menu.findItem(R.id.profile_avatar).setIcon(resource.toDrawable(resources))
     }
+
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main_app)

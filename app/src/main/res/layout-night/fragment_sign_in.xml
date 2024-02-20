@@ -8,6 +8,21 @@
     android:gravity="center"
     tools:context=".presentation.signIn.SignInFragment">
 
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/loadingUser"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:indicatorColor="@color/md_theme_light_primary"
+        app:trackThickness="8dp" />
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -126,6 +141,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/_28sdp"
             android:layout_height="wrap_content">
 
             <com.google.android.material.button.MaterialButton

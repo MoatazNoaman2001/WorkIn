@@ -17,9 +17,12 @@ import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.userProfileChangeRequest
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.inappmessaging.FirebaseInAppMessaging
+import com.google.firebase.messaging.FirebaseMessaging
 import com.google.gson.Gson
 import kotlinx.coroutines.tasks.await
 import java.lang.IllegalArgumentException
+import java.util.Date
 import java.util.regex.Pattern
 
 private const val TAG = "SigningLogistic"
@@ -100,7 +103,7 @@ object SigningLogistic {
                 val request = userProfileChangeRequest { displayName = name }
                 user.updateProfile(request)
             }
-            val mu = User(name, email, password, user?.uid , "", Pic() , "" , "")
+            val mu = User(name, email, password,null,"", user?.uid , "", Pic() , "" , "")
             storeUserCloud(mu , preferences)
             Result.success("user created successfully")
         } catch (e: FirebaseException) {
@@ -137,7 +140,7 @@ object SigningLogistic {
         var isExist = true
         var user = checkCurrentUser(preferences, FBuser)
         if (user == null || (user.email != FBuser.email)) isExist = false
-        if (user == null) user = User(FBuser.displayName!! , FBuser.email!! , "" , FBuser.uid , token ="", Pic() , "" , "" )
+        if (user == null) user = User(FBuser.displayName!! , FBuser.email!! , "" , Date(),"", FBuser.uid , token = FirebaseMessaging.getInstance().token.await(), Pic() , "" , "" )
         else { storeInPreference(preferences, user); isExist = true }
         if (!isExist) storeUserCloud(user, preferences)
         return user

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="@dimen/_14sdp"
+    tools:context=".presentation.initialStart.HelloFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alata"
+        android:layout_marginTop="200dp"
+        android:text="@string/hello_to_workin"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+        android:textColor="@color/md_theme_light_primary"
+        android:textStyle="bold"
+        app:fontFamily="@font/allerta_stencil" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:id="@+id/subHead"
+        android:layout_marginTop="@dimen/_9sdp"
+        android:layout_height="wrap_content"
+        android:text="@string/seems_to_be_your_first_visit_to_workin_welcome_mr_there_some_setps_need_to_be_taken_for_continue"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:id="@+id/title"
+        android:layout_marginTop="@dimen/_19sdp"
+        android:layout_height="wrap_content"
+        android:text="@string/initial_title_home_fragment"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/next"
+        android:text="@string/next"
+        style="@style/Widget.Material3.Button.TextButton.Dialog"
+        android:layout_marginTop="330dp"
+        android:layout_gravity="bottom|end"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

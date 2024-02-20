@@ -9,10 +9,8 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
-import dagger.hilt.android.components.FragmentComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.android.scopes.ActivityScoped
-import dagger.hilt.android.scopes.FragmentScoped
 import javax.inject.Named
 
 
@@ -27,6 +25,6 @@ object ActivityBuilder {
 
     @Provides
     @ActivityScoped
-    @Named(Constant.ImgProfileActiviy)
+    @Named(Constant.ImgProfileActivity)
     fun getProfilePicRef(auth:FirebaseAuth) = FirebaseStorage.getInstance().getReference(Constant.userStore).child(auth.currentUser?.uid!!).child(Constant.ImgProfile)
 }

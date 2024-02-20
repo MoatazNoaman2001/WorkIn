@@ -6,10 +6,61 @@
     android:layout_height="match_parent"
     tools:context=".presentation.picUpload.UploadProfileImageFragment">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/coverPic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            tools:src="@drawable/blank_light" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/coverProgressIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1"
+            app:trackCornerRadius="8dp"
+            app:trackThickness="4dp"
+            tools:progress="0" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/addCoverImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.98"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.94"
+            app:srcCompat="@drawable/baseline_edit_24"
+            app:tint="@color/md_theme_light_primary" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:layout_marginTop="140dp"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -35,6 +86,7 @@
                 android:id="@+id/progressIndicator"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:max="100"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -43,8 +95,7 @@
                 app:layout_constraintVertical_bias="0.5"
                 app:trackCornerRadius="8dp"
                 app:trackThickness="2dp"
-                tools:progress="0"
-                android:max="100"/>
+                tools:progress="0" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -65,8 +116,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="48dp"
-                android:text="@string/pick_one"
                 android:layout_marginTop="@dimen/_14sdp"
+                android:text="@string/pick_one"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -75,28 +126,28 @@
                 app:layout_constraintVertical_bias="0.5" />
 
             <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/imgUploadLoading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:indicatorColor="@color/white"
                 android:indeterminate="true"
-                app:trackCornerRadius="4dp"
                 android:padding="6dp"
                 android:visibility="gone"
-                android:id="@+id/imgUploadLoading"
+                app:indicatorColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/pic_btn"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@+id/pic_btn"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintVertical_bias="0.5" />
+                app:layout_constraintVertical_bias="0.5"
+                app:trackCornerRadius="4dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/skipBtn"
+        style="@style/Widget.Material3.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/Widget.Material3.Button.TextButton"
         android:text="@string/skip"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
